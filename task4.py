@@ -40,12 +40,12 @@ def gen_solution():
     return [item for item in s_list if not two_or_more(s_list.copy(), item)]
 
 
-# *** basic test ***
+# *** Проверка работы ***
 print(o_d_solution())
 print(cntr_solution())
 print(gen_solution())
 
-# *** timeit test ***
+# *** Проверка скорости ***
 import numpy as np
 import timeit
 
