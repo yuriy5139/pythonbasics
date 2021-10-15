@@ -5,7 +5,6 @@ import threading
 class TrafficLight():
     def __init__(self):
         self.__running = False
-        self.__interrupt = None
         self.__color = "R"
         self.__direction = "toGreen"
 
@@ -76,4 +75,3 @@ if __name__ == "__main__":
             tl_list[0].stop()
             break
     x.join()
-
