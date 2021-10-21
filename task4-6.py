@@ -137,7 +137,7 @@ if __name__ == "__main__":
                 scanners_num) or not Warehouse.check_amount(copiers_num):
             print("Не пройдена проверка на корректность вводимых данных. Выходим.")
         else:
-            ws = Warehouse(printers[0])
+            ws = Warehouse(printers)
             print("\nИнициализирован склад:")
             print(ws)
             ws.add_units(scanners)
@@ -151,6 +151,10 @@ if __name__ == "__main__":
 
             print("После распределения по отделам:")
             print(ws)
+
+            print("Оценим имущество на складе:")
+            for idf, item in ws.items:
+                print(f"Оценочная стоимость единицы {item.name} составляет {item.estimate_price()}")
 
     except ValueError:
         print("Можно вводить только целые положительные числа! Выходим.")
